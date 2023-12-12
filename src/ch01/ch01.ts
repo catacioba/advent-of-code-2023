@@ -12,7 +12,7 @@ class DigitMatch {
 }
 
 function SolvePart1(): void {
-    const file = fs.readFileSync('./test.txt', 'utf-8');
+    const file = fs.readFileSync('data/ch01.txt', 'utf-8');
     const lines = file.split(os.EOL);
     console.log(lines.map(l => {
         const first = getFirstDigit(l)!.digit;
@@ -45,7 +45,7 @@ function getLastDigit(s: string): DigitMatch | null {
 }
 
 function SolvePart2(): void {
-    const file = fs.readFileSync('./test.txt', 'utf-8');
+    const file = fs.readFileSync('data/ch01.txt', 'utf-8');
     const lines = file.split(os.EOL);
     console.log(lines.map(l => {
         return getCalibrationValue(l);
