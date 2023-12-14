@@ -26,7 +26,7 @@ function getSymbols(lines: string[]): Set<string> {
     .flatMap((l: string) => {
       const values = new Set<string>();
       for (const c of l) {
-        if (!isDigit(c) && c != '.') {
+        if (!isDigit(c) && c !== '.') {
           values.add(c);
         }
       }
@@ -50,14 +50,14 @@ function getNumberMatches(lines: string[]): NumberMatch[] {
       if (isDigit(lines[row][col])) {
         accum = accum * 10 + parseInt(lines[row][col]);
       } else {
-        if (accum != 0) {
+        if (accum !== 0) {
           nums.push(new NumberMatch(accum, row, start, col - 1));
         }
         accum = 0;
         start = col + 1;
       }
     }
-    if (accum != 0) {
+    if (accum !== 0) {
       nums.push(new NumberMatch(accum, row, start, lines[row].length - 1));
     }
   }
@@ -142,9 +142,9 @@ function SolvePart2(): void {
 
   for (let r = 0; r < lines.length; r++) {
     for (let c = 0; c < lines[r].length; c++) {
-      if (lines[r][c] == '*') {
+      if (lines[r][c] === '*') {
         const adj = adjacencyMap.get(key(r, c)) ?? [];
-        if (adj.length == 2) {
+        if (adj.length === 2) {
           gearRatios += adj[0] * adj[1];
         }
       }

@@ -47,13 +47,13 @@ function parseHand(h: string): Hand {
 
   h.split(', ').forEach(p => {
     const n = parseInt(p.slice(0, p.indexOf(' ')));
-    if (p.indexOf(redPrefix) != -1) {
+    if (p.indexOf(redPrefix) !== -1) {
       red = n;
     }
-    if (p.indexOf(greenPrefix) != -1) {
+    if (p.indexOf(greenPrefix) !== -1) {
       green = n;
     }
-    if (p.indexOf(bluePrefix) != -1) {
+    if (p.indexOf(bluePrefix) !== -1) {
       blue = n;
     }
   });

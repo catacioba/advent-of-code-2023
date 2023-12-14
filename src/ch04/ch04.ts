@@ -4,7 +4,7 @@ import * as os from 'os';
 function parseNumbers(s: string): number[] {
   return s
     .split(' ')
-    .filter(s => s != '')
+    .filter(s => s !== '')
     .map(s => parseInt(s));
 }
 

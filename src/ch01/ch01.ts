@@ -70,10 +70,10 @@ function getCalibrationValue(l: string): number {
 }
 
 function max(a: DigitMatch | null, b: DigitMatch | null): number {
-  if (a == null) {
+  if (a === null) {
     return b!.digit;
   }
-  if (b == null) {
+  if (b === null) {
     return a!.digit;
   }
   if (a!.index > b!.index) {
@@ -83,10 +83,10 @@ function max(a: DigitMatch | null, b: DigitMatch | null): number {
 }
 
 function min(a: DigitMatch | null, b: DigitMatch | null): number {
-  if (a == null) {
+  if (a === null) {
     return b!.digit;
   }
-  if (b == null) {
+  if (b === null) {
     return a!.digit;
   }
   if (a!.index < b!.index) {
@@ -112,12 +112,12 @@ function findFirstDigitSpelled(s: string): DigitMatch | null {
   let best = null;
   for (const [spelledDigit, value] of spelledDigits) {
     const idx = s.indexOf(spelledDigit);
-    if (idx != -1 && idx < bestIdx) {
+    if (idx !== -1 && idx < bestIdx) {
       bestIdx = idx;
       best = value;
     }
   }
-  if (best != null) {
+  if (best !== null) {
     return new DigitMatch(best, bestIdx);
   }
   return null;
@@ -133,7 +133,7 @@ function findLastDigitSpelled(s: string): DigitMatch | null {
       best = value;
     }
   }
-  if (best != null) {
+  if (best !== null) {
     return new DigitMatch(best, bestIdx);
   }
   return null;
